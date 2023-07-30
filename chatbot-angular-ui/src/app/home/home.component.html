@@ -1,39 +1,49 @@
-<div class="stbContainer flex flex-col flex-wrap gap-4 p-8">
-
-    <div class="chatListContainer bg-secondary rounded rounded-xl w-full mx-0">
-       <div class="chatListHeader">
-        <div class="flex p-4 flex-row justify-around ">
-            <div class="bg-contrast inline-block p-4 rounded-xl cursor-pointer flex">
-                <p>New trading strategy</p>
+<div class="stbContainer h-screen flex flex-col flex-wrap gap-4 p-8">
+    <div class="chatListContainer h-screen bg-secondary rounded-xl w-full mx-0">
+        <div class="chatListHeader">
+            <div class="flex p-4 flex-row justify-around ">
+                <div class="bg-contrast gap-4 p-4 rounded-xl cursor-pointer flex">
+                    <p>New trading strategy</p>
+                    <img src="../../assets/icons/icon _add_.svg">
+                </div>
             </div>
-            <diV>
-
-            </diV>
-            <div class="bg-contrast inline-block px-6 py-4 rounded-xl cursor-pointer flex">
-                <img src="../../assets/icons/icon _add_.svg">
-            </div>
-            
         </div>
-        
-
-       </div>
     </div>
 
-    <div class="chatBoxContainer bg-contrast rounded rounded-xl w-full mx-0">
-        <div class="">
-            <div class="flex justify-between items-end">
-                <div class="p-8 flex gap-4 ">
-                    <img src="../../assets/icons/icon _menu_.svg">
-                    <p>Smart Trade Bot</p>
-                </div>
+    <div class="chatBoxContainer h-screen bg-contrast rounded-xl w-full mx-0 flex flex-col justify-between">
+        <!-- Header -->
+        <div class="flex justify-between items-end border-b-2 border-secondary">
+            <div class="p-8 flex gap-4">
+                <img src="../../assets/icons/icon _menu_.svg">
+                <p>Smart Trade Bot</p>
+            </div>
 
-                <div class="p-4">
-                    <div class="bg-secondary inline-block px-4 py-4 rounded-xl cursor-pointer flex">
-                        <img src="../../assets/icons/icon _user_.svg">
-                    </div>
+            <div class="p-4">
+                <div class="bg-secondary px-4 py-4 rounded-xl cursor-pointer flex">
+                    <img src="../../assets/icons/icon _user_.svg">
                 </div>
             </div>
         </div>
+
+        <!-- Main content area -->
+        <div #mainContentArea class="flex-1 overflow-y-auto px-4 py-2">
+            <!-- Messages will be dynamically added here -->
+        </div>
+
+        <!-- Footer -->
+        <div class="flex justify-between items-end">
+            <!-- Textarea with full width -->
+            <div class="flex-1 p-4">
+                <textarea #messageInput class="bg-secondary rounded-xl peer block w-full border-0 px-4 py-4 text-sm resize-none outline-none" rows="1" placeholder="Your message"></textarea>
+            </div>
+        
+            <!-- Send button -->
+            <div class="p-4">
+                <div class="bg-secondary px-4 py-4 rounded-xl cursor-pointer flex" (click)="sendMessage()">
+                    <img src="../../assets/icons/icon_send_.svg">
+                </div>
+            </div>
+        </div>        
         
     </div>
 </div>
